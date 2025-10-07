@@ -150,7 +150,6 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 		color: #002060;
 	}
-	
 	m1 {
 		color: #002060;
 		font-size: 1.5em;
@@ -160,7 +159,8 @@ input, select, textarea {
 	
 	b, strong {
 		font-weight: 600;
-		color: #444;
+		color: #002060;
+		/* color: #444;*/
 	}
 
 	i, em {
@@ -1604,7 +1604,16 @@ input, select, textarea {
 			display: block;
 			width: 100%;
 		}
-
+		
+		.image.enlarge {
+			display: block;
+			width: 120%;
+		}
+		.image.shrink {
+			display: block;
+			width: 85%;
+			height: 85%
+		}
 		.image.featured {
 			display: block;
 			width: 100%;
@@ -1643,13 +1652,13 @@ input, select, textarea {
 		background: #0090c5;
 		color: #fff;
 		text-decoration: none;
-		border-radius: 6px;
+		border-radius: 2px;
 		font-weight: 800;
 		outline: 0;
 		border: 0;
 		cursor: pointer;
-		font-size: 1.35em;
-		padding: 0.6em 1.5em;
+		font-size: 1.0em;
+		padding: 0.5em 0.5em;
 	}
 
 		input[type="button"].icon:before,
@@ -1714,6 +1723,7 @@ input, select, textarea {
 			font-size: 2.25em;
 			padding: 0.8em 0.9em;
 		}
+
 
 /* List */
 
@@ -1789,12 +1799,52 @@ input, select, textarea {
 	}
 
 
+/*Thumbnail*/
+	.thumbnail-box {
+		/* Set the desired Row Height */
+		height: 400px;
+		
+		/* Set the desired Column Width */
+		width: 150px; 
+		
+		/* IMPORTANT: Hides any part of the image that exceeds the fixed size */
+		overflow: hidden; 
+		
+		/* Ensure the container itself can be sized correctly */
+		display: block; 
+	}
+	
+	.thumbnail-box img {
+		/* CRITICAL CHANGE: Scales the image to fit entirely within the box */
+		object-fit: fill; 
+		
+		/* The container's size dictates the final image size */
+		width: 100%;
+		height: 100%;
+
+		/* Optional: Set a background color for the empty space */
+		background-color: #f0f0f0; 
+	}
+    
+    /* Ensure the image takes up 100% of the box's dimensions */
+    width: 100%;
+    height: 100%;
+	}
+	
+	.thumbnail-cell {
+		/* Example: If you want 3 thumbnails per row with a small gap */
+		width: calc(33.333% - 10px); 
+		float: left;
+		margin: 5px; 
+	}
+
+
 /* Box */
 
 	.box {
 		background: #fff;
 		border-radius: 6px;
-		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.01);
 		padding: 2em;
 	}
 
@@ -1809,7 +1859,9 @@ input, select, textarea {
 			.box.feature h2 {
 				font-size: 1.35em;
 			}
-
+			.box.feature m1 {
+				margin: 0.5;
+			}			
 			.box.feature p {
 				margin: 0;
 			}
@@ -1864,13 +1916,12 @@ input, select, textarea {
 /* Widgets */
 
 	.widget.thumbnails .grid {
-		margin: 0 0 3em 0;
+		margin: 0 0 0 0;
 	}
 
 	.widget.thumbnails .image {
 		margin: 0;
 	}
-
 	.widget.contact ul {
 		list-style: none;
 		padding-left: 0;
@@ -1878,7 +1929,7 @@ input, select, textarea {
 		position: relative;
 		left: -4px;
 		top: 4px;
-		margin-bottom: 1.5em;
+		margin-bottom: 0;
 	}
 
 		.widget.contact ul li {
@@ -1921,7 +1972,7 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		padding: 3em 0 1.5em 0;
+		padding: 1.5em 0 0.5em 0;
 	}
 
 	#features-wrapper {
@@ -1932,7 +1983,7 @@ input, select, textarea {
 		background: #fff;
 		color: #002060;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		padding: 5em 0 1.5em 0;
+		padding: 0 0 0 0;
 	}
 
 	#footer-wrapper {
@@ -2104,8 +2155,8 @@ input, select, textarea {
 	#banner {
 		background-color:#ECF1FC;
 		position: relative;
-		padding: 1.5em;
-		padding-bottom: 1.5em
+		padding: 1em;
+		padding-bottom: 1em
 	}
 
 		#banner h2 {
@@ -2118,12 +2169,16 @@ input, select, textarea {
 			line-height: 1.35em;
 			margin: 0;
 		}
-
+		#banner ml {
+			font-size: 1.75em;
+			line-height: 1.35em;
+			margin: 0;
+		}
 		#banner .button {
 			width: 100%;
 			margin-bottom: 0.5em;
 		}
-
+/*
 			#banner .button.icon:before {
 				position: absolute;
 				right: 0.15em;
@@ -2134,7 +2189,7 @@ input, select, textarea {
 			#banner .button.alt {
 				margin-bottom: 0;
 			}
-
+*/
 		#banner ul {
 			list-style: none;
 			padding-left: 0;
@@ -2143,6 +2198,42 @@ input, select, textarea {
 
 			#banner ul li {
 				padding-left: 0;
+			}
+
+/* Sidebar */
+
+		#sidebar {
+
+			padding-bottom: 0;
+			margin-bottom: 0;
+			margin-bottom: 0 !important;
+		}
+			#sidebar h2 {
+				font-size: 3.5em;
+				margin: 0.1em 0 0.35em 0;
+			}
+
+			#sidebar p {
+				font-size: 2.75em;
+				line-height: 1.35em;
+				margin: 0;
+			}
+/* Content */
+
+		#content {
+			/*border-bottom: solid 1px #e8e8e8;*/
+			padding-bottom: 0;
+			margin-bottom: 0 !important;
+		}
+			#content h2 {
+				font-size: 3.5em;
+				margin: 0.1em 0 0.35em 0;
+			}
+
+			#content p {
+				font-size: 2.75em;
+				line-height: 1.35em;
+				margin: 0;
 			}
 
 /* Footer */
@@ -2154,7 +2245,22 @@ input, select, textarea {
 		#footer a {
 			color: #002060;
 		}
-
+		#footer h2 {
+			font-size: 3.25em;
+			margin: 0 0 0 0;
+			/*line-height: 1em;*/
+			color: #002060;
+		}
+		#footer h3 {
+			font-size: 1.35em;
+			margin: 0 0 0.5em 0;
+			color: #002060;
+		}
+		#footer h4 {
+			font-size: 1em;
+			margin: 0 0 0.5em 0;
+			color: #002060;
+		}
 	#copyright {
 		color: #aaa;
 		padding: 0 0 0 0;
@@ -2255,8 +2361,8 @@ input, select, textarea {
 			.button {
 				width: 100%;
 				text-align: center;
-				font-size: 1.35em;
-				padding: 0.85em 0 !important;
+				font-size: 1em;
+				padding: 0.5em 0 !important;
 			}
 
 				input[type="button"].icon,
@@ -2279,7 +2385,7 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 3em 0 1em 0;
+				padding: 1em 0 0.5em 0;
 				text-align: center;
 			}
 
@@ -2573,8 +2679,8 @@ input, select, textarea {
 			.button {
 				width: 100%;
 				text-align: center;
-				font-size: 1.25em !important;
-				padding: 0.65em 0 !important;
+				font-size: 1em !important;
+				padding: 0.5em 0 !important;
 			}
 
 				input[type="button"].icon,
@@ -2582,7 +2688,7 @@ input, select, textarea {
 				input[type="reset"].icon,
 				button.icon,
 				.button.icon {
-					padding-right: 0.75em !important;
+					padding-right: 0.5em !important;
 				}
 
 					input[type="button"].icon:before,
@@ -2645,7 +2751,7 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 2.5em 0 1.5em 0;
+				padding: 1em 0 0.5em 0;
 			}
 
 			#banner-wrapper {
@@ -2657,7 +2763,8 @@ input, select, textarea {
 			}
 
 			#main-wrapper, #footer-wrapper {
-				padding: 40px 30px 40px 30px;
+				padding: 0px 0px 0px 0px;
+				/*padding: 40px 30px 40px 30px;*/
 			}
 
 		/* Logo */
@@ -2699,7 +2806,7 @@ input, select, textarea {
 				}
 
 				#banner .button {
-					margin: 0 0 1em 0;
+					margin: 0 0 0.5em 0;
 				}
 
 		/* Content */
@@ -2715,6 +2822,7 @@ input, select, textarea {
 				padding-bottom: 3em;
 				margin-bottom: 1em !important;
 			}
+
 
 			#copyright {
 				text-align: left;
