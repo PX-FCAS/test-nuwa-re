@@ -1,6 +1,13 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
 
+@font-face {
+    font-family: 'Bank Gothic Light'; /* Choose a descriptive name for CSS use */
+    src: url('BankGothicLtBTLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*
 	Verti by HTML5 UP
 	html5up.net | @ajlkn
@@ -109,7 +116,15 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
+	
+	nuware {
+		font-family: 'Bank Gothic Light', bank-gothic-light;
+		font-weight: 800;
+		font-size: 3em;
+		margin: 0 0 1em 0;
+		color: #002060;
+	}
+	
 	input, select, textarea {
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
@@ -1977,6 +1992,7 @@ input, select, textarea {
 
 	#features-wrapper {
 		padding: 1.5em 0 1.5em 0;
+		
 	}
 
 	#main-wrapper {
@@ -2062,10 +2078,10 @@ input, select, textarea {
 					-webkit-transition: background-color .25s ease-in-out;
 					-ms-transition: background-color .25s ease-in-out;
 					transition: background-color .25s ease-in-out;
-					background-color: #ECF1FC;
+					background-color: #DAE9F8;
 					font-weight: 800;
 					letter-spacing: 0.025em;
-					color: #696969;
+					color: #002060;/*696969*/
 					text-decoration: none;
 					border-radius: 6px;
 					padding: 0.5em 1em 0.5em 1em;
@@ -2081,18 +2097,19 @@ input, select, textarea {
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
-					background: #fff;
+					background: #91acf1;/*fff*/
 				}
 
 				#nav ul li.current a {
-					background: #444;
+					background: #002060;/*#444*/
 					color: #fff;
 				}
 
 	.dropotron {
 		background: #fff;
 		letter-spacing: 0.025em;
-		color: #696969;
+		font-weight: 600;
+		color: #002060;
 		text-decoration: none;
 		border-radius: 6px;
 		padding: 0.75em 0;
@@ -2126,7 +2143,7 @@ input, select, textarea {
 			}
 
 				.dropotron li > a:hover, .dropotron li > span:hover {
-					background: #eee;
+					background: #91acf1;
 				}
 
 			.dropotron li.active > a, .dropotron li.active > span {
@@ -2245,6 +2262,11 @@ input, select, textarea {
 		#footer a {
 			color: #002060;
 		}
+		#footer nuware {
+			font-size: 3em;
+			margin: 0 0 0.5em 0;
+			color: #002060;
+		}
 		#footer h2 {
 			font-size: 3.25em;
 			margin: 0 0 0 0;
@@ -2253,7 +2275,7 @@ input, select, textarea {
 		}
 		#footer h3 {
 			font-size: 1.35em;
-			margin: 0 0 0.5em 0;
+			margin: 0 0 0.25em 0;
 			color: #002060;
 		}
 		#footer h4 {
